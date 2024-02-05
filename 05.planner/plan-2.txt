@@ -1,0 +1,8 @@
+{{!-- Step 1: Identify key values --}}
+{{set "title" "Graduation Poems"}}
+{{set "poems" (array "Today we say farewell," "To the halls we know so well." "With wisdom gained and memories stored," "Our futures we now move toward." "Through laughter, tears, and joy," "We have grown and found our voice." "Friends made, lessons learned," "In our hearts, this school will forever be cherished and returned." "So as we step ahead into the unknown," "Our memories of high school will continue to be shown." "To our teachers, mentors, and friends so dear," "We thank you for being here.")}}
+
+{{!-- Step 2: Loop through the poems and print them --}}
+{{#each poems}}
+  {{json this}}
+{{/each}}

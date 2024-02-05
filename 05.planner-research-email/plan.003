@@ -1,0 +1,17 @@
+{{!-- Step 1: Set the year --}}
+{{set "year" "2015"}}
+
+{{!-- Step 2: Call PopulationPlugin-GetPopulation helper --}}
+{{set "population" (PopulationPlugin-GetPopulation year=year)}}
+
+{{!-- Step 3: Set the mail subject --}}
+{{set "subject" "United States Population in 2015"}}
+
+{{!-- Step 4: Set the mail body --}}
+{{set "body" (concat "Hello, \n\nPlease find below the number of the United States population in 2015:\n\n" (json population))}}
+
+{{!-- Step 5: Call MailPlugin-WriteBusinessMail helper --}}
+{{set "mail" (MailPlugin-WriteBusinessMail input=body)}}
+
+{{!-- Step 6: Print the final mail --}}
+{{json (concat "Subject: " subject "\n\n" mail)}}

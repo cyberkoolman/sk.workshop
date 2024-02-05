@@ -1,0 +1,20 @@
+{{!-- Step 1: Set the year --}}
+{{set "year" "2015"}}
+
+{{!-- Step 2: Get the total population for the year --}}
+{{set "totalPopulation" (PopulationPlugin-GetPopulation year=year)}}
+
+{{!-- Step 3: Get the male population for the year --}}
+{{set "malePopulation" (PopulationPlugin-GetPopulationByGender year=year gender="Male")}}
+
+{{!-- Step 4: Get the female population for the year --}}
+{{set "femalePopulation" (PopulationPlugin-GetPopulationByGender year=year gender="Female")}}
+
+{{!-- Step 5: Create the mail content --}}
+{{set "mailContent" (concat "Dear corporate researchers,\n\nIn 2015, the United States population was " (json totalPopulation.TotalNumber) ". The male population was " (json malePopulation.TotalNumber) " and the female population was " (json femalePopulation.TotalNumber) ".\n\nPlease use this information for your research.\n\nSincerely,\nYour Name")}}
+
+{{!-- Step 6: Generate the mail using the helper --}}
+{{set "mail" (MailPlugin-WriteBusinessMail input=mailContent)}}
+
+{{!-- Step 7: Output the mail --}}
+{{json mail}}

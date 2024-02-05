@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\config\Settings.cs" Link="Settings.cs" />
+    <PackageReference Include="LLamaSharp" Version="0.9.1" />
+    <PackageReference Include="LLamaSharp.Backend.Cpu" Version="0.9.1" />  
+    <PackageReference Include="Microsoft.SemanticKernel" Version="1.1.0" />    
+  </ItemGroup>
+    
+  <ItemGroup>
+    <Reference Include="Libs\*.dll" />
+  </ItemGroup>
+
+</Project>

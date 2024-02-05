@@ -1,0 +1,11 @@
+{{!-- Step 1: Set the year --}}
+{{set "year" "2015"}}
+
+{{!-- Step 2: Call PopulationPlugin-GetPopulation to get the population for the given year --}}
+{{set "populationResponse" (PopulationPlugin-GetPopulation year)}}
+
+{{!-- Step 3: Call MailPlugin-WriteBusinessMail to generate the mail body --}}
+{{set "mailBody" (MailPlugin-WriteBusinessMail input=(json populationResponse))}}
+
+{{!-- Step 4: Print the mail body to the screen --}}
+{{mailBody}}

@@ -1,0 +1,45 @@
+{{!-- 1. Identify Key Values --}}
+
+{{!-- Variable for the number of poems to generate --}}
+{{set "poemsCount" 3}}
+
+{{!-- 2. Choose the Right Helpers --}}
+
+{{!-- First line of the poem --}}
+{{set "line1" "In this moment of sweet farewells"}}
+
+{{!-- Second line of the poem --}}
+{{set "line2" "Our memories like a silver bell resounds"}}
+
+{{!-- Third line of the poem --}}
+{{set "line3" "Through the journey we have shared, we excel"}}
+
+{{!-- Fourth line of the poem --}}
+{{set "line4" "With dreams in our hearts, we proudly bound"}}
+
+{{!-- 3. Don't Create or Assume Unlisted Helpers --}}
+{{!-- No custom helpers are needed to achieve the goal --}}
+
+{{!-- 4. What if I Need More Helpers? --}}
+{{!-- No additional helpers are required --}}
+
+{{!-- 5. Keep It Simple --}}
+
+{{!-- Loop through the number of poems to generate --}}
+{{#each (range 1 (add poemsCount 1))}}
+
+  {{!-- Output one poem --}}
+  {{#unless (equals @index 0)}}
+    {{!-- Print poems with index starting from 1 for better readability --}}
+    {{json (concat "Poem " (add @index 1))}}
+    {{json line1}}
+    {{json line2}}
+    {{json line3}}
+    {{json line4}}
+  {{/unless}}
+
+{{/each}}
+
+{{!-- 6. No Nested Helpers --}}
+
+{{!-- 7. Output the Result --}}
