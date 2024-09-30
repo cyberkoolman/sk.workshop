@@ -15,7 +15,7 @@ This repository provides Proof of Concept (PoC) examples using Microsoft's [Sema
 
 ### Prerequisites
 
-- .NET 6 or later
+- .NET 8
 - Azure OpenAI service (optional for certain examples)
 
 ### Installation
